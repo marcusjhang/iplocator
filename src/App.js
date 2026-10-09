@@ -4,6 +4,9 @@ import arrow from "./images/icon-arrow.svg"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useEffect, useState } from "react"
 
+// Base URL of the IPify Geolocation API; override with REACT_APP_IPIFY_BASE_URL (e.g. for a local stub)
+const IPIFY_BASE_URL = process.env.REACT_APP_IPIFY_BASE_URL || "https://geo.ipify.org"
+
 function App() {
   const [address, setAddress] = useState(null)
   const [ipAddress, setIpAddress] = useState("")
@@ -11,7 +14,7 @@ function App() {
   useEffect(() => {
     try {
       const getInitialData = async () => {
-        const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=192.212.174.101`)
+        const res = await fetch(`${IPIFY_BASE_URL}/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=192.212.174.101`)
         const data = await res.json()
         setAddress(data)
       }
@@ -31,7 +34,7 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault() //prevents website from reloading, which will call useEffect again
     try {
-      const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${ipAddress}`);
+      const res = await fetch(`${IPIFY_BASE_URL}/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${ipAddress}`);
       const data = await res.json();
       setAddress(data);
     } catch (error) {
