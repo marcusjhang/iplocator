@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Environment
+
+Set these before `npm start` / `npm run build` (CRA inlines `REACT_APP_*` values at startup):
+
+- `REACT_APP_IPIFY_URL` – base URL of the IPify Geolocation API (scheme + host, no trailing slash).
+- `REACT_APP_API_KEY` – your IPify API key.
+
 ## Available Scripts
 
 In the project directory, you can run:
