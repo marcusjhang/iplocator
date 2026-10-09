@@ -68,3 +68,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Configuration
+
+- `REACT_APP_API_KEY` – your [IPify Geolocation](https://geo.ipify.org) API key.
+- `REACT_APP_IPIFY_BASE_URL` (optional) – base URL for the IPify API. Defaults to `https://geo.ipify.org`; override it to point at a local/stub endpoint (e.g. for preview environments).
