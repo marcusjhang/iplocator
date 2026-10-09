@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Previewing without an ipify API key
+
+`REACT_APP_IPIFY_URL` overrides the ipify endpoint (it defaults to `https://geo.ipify.org/api/v2/country,city`). For local previews without a `REACT_APP_API_KEY`, start the deterministic mock with `node scripts/mock-ipify.js` (port 4010). Then run the dev server with `IPIFY_PROXY_TARGET=http://127.0.0.1:4010 REACT_APP_IPIFY_URL=/ipify-proxy/api/v2/country,city npm start`. The mock returns fixed sample data and is not real geolocation.
